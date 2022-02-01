@@ -3,7 +3,7 @@ void cmp(int a,int b,int c,int*large)
 {
   if(a>b)
   {
-    if(a+b)
+    if(a>c)
     {
       *large=a;
     }
@@ -13,24 +13,21 @@ void cmp(int a,int b,int c,int*large)
     }
   }
   else
-{
-  if(b>c)
   {
-    *large=b;
-  }
-  else
-  {
-    *large=c;
+    if (b>c)
+    {
+      *large=b;
+    }
+    else
+    {
+      *large=c;
+    }
   }
 }
-}
-
-
-
 void input(int *a,int *b,int *c)
 {
-  printf("enter any three numbers\n");
-  scanf("%d,%d,%d",a,b,c);
+  printf("enter the three numbers\n");
+  scanf("%d%d%d",a,b,c);
 }
 int main()
 {
