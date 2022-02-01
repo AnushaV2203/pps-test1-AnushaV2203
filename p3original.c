@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 void input(int *a, int *b)
 {
   printf("enter two numbers\n");

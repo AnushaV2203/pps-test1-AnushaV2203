@@ -1,16 +1,4 @@
-gcc -g p1original.c
- gdb a.out
-GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
-Copyright (C) 2018 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
-and "show warranty" for details.
-This GDB was configured as "x86_64-linux-gnu".
-Type "show configuration" for configuration details.
-For bug reporting instructions, please see:
-unable to run, main file "main.sh" not found
- gcc -g p3original.c
+ gcc -g p3original.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -38,13 +26,14 @@ Breakpoint 1, main () at p3original.c:18
 (gdb) n
 20    input(&a,&b);
 (gdb) s
-input (a=0x7ffc0557a11c, b=0x7ffc0557a120) at p3original.c:4
+input (a=0x7ffc09e8268c, b=0x7ffc09e82690)
+    at p3original.c:4
 4     printf("enter two numbers\n");
 (gdb) n
 enter two numbers
 5     scanf("%d %d",a,b);
 (gdb) n
-3 4
+4 5
 6     return;
 (gdb) n
 7   }
@@ -52,7 +41,7 @@ enter two numbers
 main () at p3original.c:21
 21    add(a,b,&s);
 (gdb) s
-add (a=3, b=4, s=0x7ffc0557a124) at p3original.c:10
+add (a=4, b=5, s=0x7ffc09e82694) at p3original.c:10
 10    *s=a+b;
 (gdb) n
 11    return;
@@ -62,12 +51,19 @@ add (a=3, b=4, s=0x7ffc0557a124) at p3original.c:10
 main () at p3original.c:22
 22    output(a,b,s);
 (gdb) s
-output (a=3, b=4, s=7) at p3original.c:15
+output (a=4, b=5, s=9) at p3original.c:15
 15    printf("sum of %d + %d = %d\n",a,b,s);
 (gdb) n
-sum of 3 + 4 = 7
+sum of 4 + 5 = 9
 16  }
-(gdb) c
-Continuing.
-[Inferior 1 (process 379) exited normally]
-(gdb) 
+(gdb) n
+main () at p3original.c:23
+23    return 0;
+(gdb) s
+25  }
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 112] will be killed.
+
+Quit anyway? (y or n) y

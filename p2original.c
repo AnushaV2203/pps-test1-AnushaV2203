@@ -1,4 +1,4 @@
-#include <stdio.h>
+include <stdio.h>
 int input()
 {
   int num;
@@ -6,7 +6,7 @@ int input()
   scanf("%d", &num);
   return num;
 } 
-
+#
 int add(int a, int b)
 {
   int sum;
